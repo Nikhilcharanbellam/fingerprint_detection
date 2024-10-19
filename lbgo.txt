@@ -35,14 +35,8 @@ disp(result);
 figure;
 imshow(result, [], 'DisplayRange', []);
 title('Decimal Values from Center-Symmetric Pixel Differences');
-
-% Assuming 'result' is your 59x16 matrix
-
-% Define the number of bins
-numBins = 256; % For values ranging from 0 to 255
+numBins = 256;
 histogramValues = zeros(1, numBins);
-
-% Count the frequency of each value in the result matrix
 for i = 1:size(result, 1)
     for j = 1:size(result, 2)
         value = result(i, j);
@@ -51,8 +45,6 @@ for i = 1:size(result, 1)
         end
     end
 end
-
-% Create the histogram plot
 figure;
 bar(0:numBins-1, histogramValues);
 title('Histogram of Result Values');
